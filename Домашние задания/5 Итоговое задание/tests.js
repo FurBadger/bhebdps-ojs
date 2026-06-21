@@ -372,6 +372,8 @@ describe('Итоговое домашнее задание по курсу', () 
       it('tryAttack атакует если враг в досягаемости', () => {
         const player = new Warrior(0, 'Алёша Попович');
         const archer = new Archer(2, 'Леголас');
+        player.getLuck = () => 0.5;
+        archer.getLuck = () => 0.5;
         player.moveRight(1);
         player.tryAttack(archer);
         expect(archer.life).toBeLessThan(80);
